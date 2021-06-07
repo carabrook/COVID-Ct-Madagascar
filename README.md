@@ -12,7 +12,7 @@ This repository contains all scripts and data to support a recent submission (An
 
 * *Ct-longitudinal-gams*: Contains data, scripts, resulting output, and compilation script for longitudinal GAMs of population-level Ct by region (Fig. 2A, main text, Fig. S2, Table S4). Also includes .sh scripts to run these analyses on Savio or any other remote cluster.
 
-* *individual-Ct*: Contains individual-Ct trajectory data, GAM scripts, and resulting fitted GAMs, as well as viral kinetics model fitting script adopted from Hay et al. 2020 (see [here](https://github.com/jameshay218/virosolver_paper) for original script. Output is summarized in Fig 2B-D main text and Table S5. Folder also includes .sh scripts to run these analyses on Savio or any other remote cluster.
+* *individual-Ct*: Contains individual-Ct trajectory data and GAM scripts, as well as viral kinetics model fitting script adopted from Hay et al. 2020 (see [here](https://github.com/jameshay218/virosolver_paper) for original script. Note that actual fitted GAMs are not included due to large filesize but should be reproducible from data and scripts included. Output of these analyses is summarized in Fig 2B-D main text and Table S5. Folder also includes .sh scripts to run these analyses on Savio or any other remote cluster.
 
 * *common_pars*: Contains fitted viral kinetics parameters derived from mechanistic viral kinetics model fits to the individual trajectory GAM output.
 
