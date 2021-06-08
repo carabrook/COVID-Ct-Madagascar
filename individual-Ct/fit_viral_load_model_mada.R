@@ -349,7 +349,7 @@ p_main <- (p_left | p3) + plot_layout(widths=c(1.5,1))
 p_main
 
 
-ggsave(file = "/Users/caraebrook/Documents/R/R_repositories/COVID-Ct-Madagascar/Mada-Ct-Distribute/fig-plots/FigS3.png",
+ggsave(file = "/Users/caraebrook/Documents/R/R_repositories/COVID-Ct-Madagascar/Mada-Ct-Distribute/fig-plots/FigS4.png",
        plot = p_main,
        units="mm",  
        width=70, 
