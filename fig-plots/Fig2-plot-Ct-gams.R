@@ -32,6 +32,8 @@ dat.gam.all$test[dat.gam.all$test=="Lightmix TibMolBiol"] <- "Lightmix\nSarbeCoV
 dat.gam.all$test[dat.gam.all$test=="DAAN"] <- "Da An"
 
 dat.gam.all$test <- factor(dat.gam.all$test, levels = c("Berlin Charity", "Da An", "Hong Kong", "Lightmix\nSarbeCoV", "SarbeCoV\nTibMolBiol", "TaqPath", "GeneXpert"))
+
+dat.gam.all$region <- factor(dat.gam.all$region, levels = c("Atsinanana", "Analamanga", "National"))
 #now plot Ct
 p1 <- ggplot(data=dat.gam.all) + 
       geom_point(aes(x=date, y=Ct, color=test, shape=target), alpha=.6) +
