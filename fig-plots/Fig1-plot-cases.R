@@ -96,6 +96,11 @@ p1 <- ggplot(data=dat) +
       geom_hline(aes(yintercept=500), linetype=2, size=.2) #+ coord_cartesian(ylim=c(0,650))
 print(p1)
 
+#and save the date of peak cases by region, based on the IPM data
+
+IPM.dat <- ddply(dat.all, .(region), summarize, date_peak = min(date[cases==max(cases)]))
+save(IPM.dat, file = "peakCaseDate_byRegion.Rdata")
+
 #and the map
 library(sf)
 mada<-read_sf("GIS/MDG_adm3.shp")

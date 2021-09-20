@@ -34,11 +34,18 @@ dat.gam.all$test[dat.gam.all$test=="DAAN"] <- "Da An"
 dat.gam.all$test <- factor(dat.gam.all$test, levels = c("Berlin Charity", "Da An", "Hong Kong", "Lightmix\nSarbeCoV", "SarbeCoV\nTibMolBiol", "TaqPath", "GeneXpert"))
 
 dat.gam.all$region <- factor(dat.gam.all$region, levels = c("Atsinanana", "Analamanga", "National"))
+
+#and add the date of peak cases by region.
+
+load("peakCaseDate_byRegion.Rdata")
+IPM.dat$region <- factor(IPM.dat$region, levels = c("Atsinanana", "Analamanga", "National"))
+
 #now plot Ct
 p1 <- ggplot(data=dat.gam.all) + 
       geom_point(aes(x=date, y=Ct, color=test, shape=target), alpha=.6) +
-      geom_line(aes(x=date, y= gam_predict), size=1)+
+      geom_vline(data=IPM.dat, aes(xintercept=date_peak), linetype = 1) +
       geom_ribbon(aes(x=date, ymin= gam_predict_lci, ymax=gam_predict_uci), alpha=.5)+
+      geom_line(aes(x=date, y= gam_predict), size=1)+
       facet_grid(region~.) + theme_bw()+
       theme(panel.grid = element_blank(), axis.title.x = element_blank(), 
             strip.background = element_rect(fill="white"), 

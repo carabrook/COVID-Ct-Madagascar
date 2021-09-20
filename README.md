@@ -1,6 +1,6 @@
 # Mada-Ct-Distribute
 
-This repository contains all scripts and data to support a recent submission (Andriamandimby and Brook et al. 2021) to Epidemics' special issue on COVID-19 dynamics in lower- and middle- income countries. Each subfolder of the repository contains scripts for largely self-contained analyses. These are organized as follows:
+This repository contains all scripts and data to support a recent submission ([Andriamandimby and Brook et al. 2021](https://www.medrxiv.org/content/10.1101/2021.07.06.21259473v1)) to Epidemics' special issue on COVID-19 dynamics in lower- and middle- income countries. Each subfolder of the repository contains scripts for largely self-contained analyses. These are organized as follows:
 
 * *epinow2-ipm*: This folder contains COVID-19 case count data from March - September 2020 at the National level and across two main administrative regions, derived from RT-qPCR testing in the Virology Unit laboratory at Institut Pasteur of Madagascar. The linelist of cases ('ipm-case-dat.csv') is then called by three R-scripts "estim-*" which use the opensource EpiNow2 package to estimate Rt and the epidemic growth rate from each region. The output .Rdata files are also included in the folder. A summary script "extract-save-growth-rt.R" compiles these Rdata files into a final csv which is referenced in subsequent analyses. The .sh files used to run this script on the UC Berkeley savio cluster are also included.
 
@@ -23,5 +23,7 @@ This repository contains all scripts and data to support a recent submission (An
 * *viro-seir-clust*: Contains scripts, data, and .sh savio scripts to run SEIR model fit to cross-sectional Ct distributions across all three regions. Script is adopted from [Hay et al. 2020](https://github.com/jameshay218/virosolver_paper).
 
 * *fig-plots*: Contains scripts and resulting figures to produce all main text and supplementary figures in the manuscript. Note that GAMs will need to be run in advance to produce fitted GAMs in scripts where these are called as .Rdata files. GIS shapefiles for Madagascar (Fig. 1) are not included here due to large filesize but are available for public download as MDG_adm0 (boundary) and MDG_adm3 (third-level administrative boundaries) [here](https://earthworks.stanford.edu/catalog.html?f%5Bdc_format_s%5D%5B%5D=Shapefile&f%5Bdc_subject_sm%5D%5B%5D=Boundaries&f%5Bdct_spatial_sm%5D%5B%5D=Madagascar&per_page=20&sort=dc_publisher_sort+asc%2C+dc_title_sort+asc).
+
+* *"Epidemics-COVID-Ct-Madagascar-Supplementary-Tables-Final.xlsx"* : Final, compiled supplementary tables from our original [paper](https://www.medrxiv.org/content/10.1101/2021.07.06.21259473v1).
 
 
